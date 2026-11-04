@@ -1,5 +1,55 @@
 [
 {
+"title": "588 Packaging Machine Operator",
+"company": "Foster Farms",
+"pay": "$17.35/hr day shift",
+"city": "Turlock, CA",
+"posted": "2026-11-04",
+"first_seen": "2026-11-04T08:03:14-08:00",
+"url": "https://www.linkedin.com/jobs/view/588-packaging-machine-operator-at-foster-farms-4486306840",
+"employment_type": "Full-time"
+},
+{
+"title": "Warehouse coordinator",
+"company": "Ryder Supply Chain Solutions",
+"pay": "$23.23/hr (+$0.75 2nd shift), M–F 3pm–12am",
+"city": "Modesto, CA",
+"posted": "2026-11-04",
+"first_seen": "2026-11-04T08:03:14-08:00",
+"url": "https://www.linkedin.com/jobs/view/warehouse-coordinator-at-ryder-supply-chain-solutions-4487083285",
+"employment_type": "Full-time"
+},
+{
+"title": "Milk Receiving/Powder & Machine Operators",
+"company": "A Hiring Company",
+"pay": "$24–$26/hr DOE (Crystal Creamery)",
+"city": "Modesto, CA",
+"posted": "2026-11-03",
+"first_seen": "2026-11-04T08:03:14-08:00",
+"url": "https://www.linkedin.com/jobs/view/milk-receiving-powder-machine-operators-at-a-hiring-company-4486080782",
+"employment_type": "Full-time"
+},
+{
+"title": "Warehouse Associate",
+"company": "Menasha Corporation",
+"pay": null,
+"city": "Modesto, CA",
+"posted": "2026-11-03",
+"first_seen": "2026-11-04T08:03:14-08:00",
+"url": "https://www.linkedin.com/jobs/view/warehouse-associate-at-menasha-corporation-4487063820",
+"employment_type": "Full-time"
+},
+{
+"title": "Warehouse coordinator",
+"company": "Ryder System, Inc.",
+"pay": "$23.23/hr (duplicate LinkedIn listing of Ryder Warehouse Clerk)",
+"city": "Modesto, CA",
+"posted": "2026-11-03",
+"first_seen": "2026-11-04T08:03:14-08:00",
+"url": "https://www.linkedin.com/jobs/view/warehouse-coordinator-at-ryder-system-inc-4486304360",
+"employment_type": "Full-time"
+},
+{
 "title": "Operator",
 "company": "Darling Ingredients",
 "pay": "$20–$35/hr",
@@ -1118,105 +1168,5 @@
 "first_seen": "2026-10-05T07:35:35-07:00",
 "url": "https://www.simplyhired.com/job/qxLeeVqrCxshj2VVE4DNqT0J7BOnGEWU37lVRsZQvvf5JYwf9HH2Ng",
 "employment_type": "Full-time (per LinkedIn); 12-hr variable shifts (official); day shift not confirmed in posting text"
-},
-{
-"title": "Warehouse Lead",
-"company": "Dot Foods",
-"pay": "$30.10–$32.85/hr",
-"city": "Modesto, CA",
-"posted": "2026-10-02",
-"first_seen": "2026-10-04T21:29:23-07:00",
-"url": "https://www.simplyhired.com/job/8XcLHCPO0-9M5ZlToKxHGQjhew8xGqeMdcGrDi4vLdd6vvyf0aZGSw",
-"employment_type": "Full-time"
-},
-{
-"title": "Material Handler",
-"company": "Newly Weds Foods",
-"pay": "$20.76–$31.13/hr",
-"city": "Modesto, CA",
-"posted": "2026-10-01",
-"first_seen": "2026-10-04T21:28:37-07:00",
-"url": "https://www.linkedin.com/jobs/view/material-handler-at-newly-weds-foods-4472968059",
-"employment_type": "Full-time"
-},
-{
-"title": "Warehouse Associate - Patterson (Days)",
-"company": "Grainger",
-"pay": "$23.65/hr start (to $24.85 in 12 mo) + $1/hr PIE operators",
-"city": "Patterson, CA",
-"posted": "2026-09-28",
-"first_seen": "2026-10-04T21:28:37-07:00",
-"url": "https://www.linkedin.com/jobs/view/warehouse-associate-patterson-days-at-grainger-4472484538",
-"employment_type": "Full-time"
-},
-{
-"title": "Warehouse Order Selector",
-"company": "Sysco",
-"pay": "$26.01–$30/hr DOE",
-"city": "Modesto, CA",
-"posted": "2026-09-30",
-"first_seen": "2026-10-04T21:28:37-07:00",
-"url": "https://www.linkedin.com/jobs/view/warehouse-order-selector-at-sysco-4473902715",
-"employment_type": "LinkedIn lists 'Internship' (likely mislabel); description says immediately hiring"
-},
-{
-"title": "Warehouse Unloader",
-"company": "Capstone Logistics, LLC",
-"pay": "$700–$980+/week (production pay)",
-"city": "Patterson, CA",
-"posted": "2026-10-02",
-"first_seen": "2026-10-04T21:28:37-07:00",
-"url": "https://www.linkedin.com/jobs/view/warehouse-unloader-at-capstone-logistics-llc-4434525534",
-"employment_type": "Full-time, M-F 5am-1:30pm"
-},
-{
-"title": "Raw Whey Operator",
-"company": "Hilmar Cheese Company",
-"pay": "$25.28-$29.40/hr (official site)",
-"city": "Hilmar, CA",
-"posted": "2026-10-02",
-"first_seen": "2026-10-04T21:28:37-07:00",
-"url": "https://www.linkedin.com/jobs/view/raw-whey-operator-at-hilmar-4475042646",
-"employment_type": "Full-time; 12-hr shifts incl. weekends/holidays/OT"
-},
-{
-"title": "Tower Operator - Plant 1",
-"company": "Hilmar Cheese Company",
-"pay": "$24.71-$28.20/hr (official site)",
-"city": "Hilmar, CA",
-"posted": "2026-10-02",
-"first_seen": "2026-10-04T21:28:37-07:00",
-"url": "https://www.linkedin.com/jobs/view/tower-operator-plant-1-at-hilmar-4475038806",
-"employment_type": "Full-time; 12-hr variable shifts incl. weekends/holidays/OT"
-},
-{
-"title": "Utility II (Production Associate)",
-"company": "Novolex",
-"pay": "$23.55/hr start",
-"city": "Turlock, CA",
-"posted": "2026-09-22",
-"first_seen": "2026-10-04T21:28:37-07:00",
-"url": "https://www.linkedin.com/jobs/view/utility-ii-at-novolex-4460064848",
-"employment_type": "Full-time, rotating shifts"
-},
-{
-"title": "PM Shift-Loader Operator",
-"company": "Dairy Farmers of America",
-"pay": "$22.00/hr",
-"city": "Turlock, CA",
-"posted": "2026-09-23",
-"first_seen": "2026-10-04T21:28:37-07:00",
-"url": "https://www.linkedin.com/jobs/view/pm-shift-loader-operator-at-dairy-farmers-of-america-4470635142",
-"employment_type": "Full-time"
-},
-{
-"title": "Warehouse Lead",
-"company": "Rush Enterprises, Inc",
-"pay": "$23.00–$26.00/hr",
-"city": "Ceres, CA",
-"posted": "2026-10-02",
-"first_seen": "2026-10-04T21:28:37-07:00",
-"url": "https://www.linkedin.com/jobs/view/warehouse-lead-at-rush-enterprises-inc-4473181112",
-"employment_type": "Full-time"
 }
 ]
