@@ -4,46 +4,44 @@
 <title>Job Board</title><meta name="theme-color" content="#1f4e79">
 <link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="apple-touch-icon" href="icon-192.png">
 <style>
-body{font-family:system-ui,sans-serif;margin:0;background:#f3f5f8;color:#222}
-header{background:#1f4e79;color:#fff;padding:14px 16px;position:sticky;top:0}
-h1{margin:0;font-size:1.2rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
-main{padding:10px;max-width:640px;margin:auto}
-.card{background:#fff;border-radius:10px;padding:12px 14px;margin-bottom:10px;box-shadow:0 1px 3px #0002}
-.card h2{font-size:1.05rem;margin:0 0 4px}.co{font-weight:600}.row{font-size:.9rem;margin:3px 0}
-.missing{color:#999;font-style:italic}.new{background:#d9480f;color:#fff;font-size:.7rem;padding:2px 6px;border-radius:8px;margin-left:6px;vertical-align:middle}
-.f{position:sticky;top:62px;background:#f3f5f8;padding:8px 10px;max-width:640px;margin:auto;display:flex;flex-wrap:wrap;gap:6px}
-.f input,.f select{font-size:16px;padding:7px;border:1px solid #bbb;border-radius:6px;flex:1 1 120px}.f input[type=search]{flex-basis:100%}
-.f label{font-size:.9rem;display:flex;align-items:center;gap:4px}
-a.apply{display:inline-block;margin-top:8px;background:#1f4e79;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none}
+body{font-family:"Roboto Condensed","Arial Narrow",system-ui,sans-serif;margin:0;background:#fff;color:#222;font-size:13px}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:10px 10px 6px;border-bottom:2px solid #222;position:sticky;top:0;background:#fff;z-index:1}
+h1{margin:0;font-size:18px;white-space:nowrap}header p{margin:0;color:#666;font-size:12px;text-align:right}
+.f{display:flex;flex-wrap:wrap;gap:5px;padding:6px 10px;background:#f6f6f6;border-bottom:1px solid #ddd}
+.f input,.f select{font-size:16px;padding:5px;border:1px solid #bbb;border-radius:3px;flex:1 1 120px;min-width:0}.f input[type=search]{flex-basis:100%}
+.f label{font-size:13px;display:flex;align-items:center;gap:4px}.f input[type=checkbox]{flex:none}
+table{width:100%;border-collapse:collapse}th{text-align:left;font-size:11px;text-transform:uppercase;color:#777;padding:6px;border-bottom:1px solid #ccc;background:#fafafa}
+td{padding:7px 6px;border-bottom:1px solid #eee;vertical-align:top}tr:nth-child(even) td{background:#fbfbfb}tbody tr{cursor:pointer}tbody tr:active td{background:#eef3ff}
+td b{display:block;font-size:13px}td small{color:#777}.m{color:#bbb}.new{background:#d00;color:#fff;font-size:9px;font-weight:700;padding:1px 4px;border-radius:2px;margin-left:4px}
+a{color:#0645ad;font-weight:700}.empty{padding:16px;color:#999}
 </style></head><body>
-<header><h1>Mark's Job Board</h1><p id="sum">Loading…</p></header>
+<header><h1>JOB BOARD</h1><p id="sum">Loading…</p></header>
 <div class="f"><input type="search" id="q" placeholder="Search title or company">
 <select id="city"><option value="">All cities</option></select>
 <select id="pay"><option value="">Pay: any</option><option value="y">Pay listed</option><option value="n">Pay not listed</option></select>
 <label><input type="checkbox" id="new"> New today</label></div>
-<main id="list"></main>
+<table><thead><tr><th>Job</th><th>Pay</th><th>City</th><th>Found</th><th></th></tr></thead><tbody id="list"></tbody></table>
 <script>const MAX_AGE_DAYS = 30, $ = id => document.getElementById(id);
 const pt = d => new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles'}).format(d);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const val = v => v ? esc(v) : '<span class="missing">not listed</span>';
 const today = pt(new Date()), cutoff = pt(new Date(Date.now() - MAX_AGE_DAYS*864e5));
 let leads = [];
-const card = j => `<div class="card"><h2>${val(j.title)}${j.found===today?'<span class="new">NEW TODAY</span>':''}</h2>
-<div class="row co">${val(j.company)}</div>
-<div class="row">💵 ${val(j.pay)}</div><div class="row">📍 ${val(j.city)}</div>
-<div class="row">🗓 Found ${val(j.found)}${j.posted?` · posted ${esc(j.posted)}`:''}</div>
-${j.url?`<a class="apply" href="${esc(j.url)}" target="_blank" rel="noopener">Apply</a>`:'<div class="row missing">No apply link</div>'}</div>`;
+const row = j => `<tr${j.url?` data-url="${esc(j.url)}"`:''}><td><b>${esc(j.title||'—')}${j.found===today?'<span class="new">NEW</span>':''}</b><small>${esc(j.company||'')}</small></td>
+<td>${j.pay?esc(j.pay):'<span class="m">—</span>'}</td><td>${esc((j.city||'—').replace(/, CA$/,''))}</td><td>${j.found.slice(5)}</td>
+<td>${j.url?`<a href="${esc(j.url)}" target="_blank" rel="noopener">Apply</a>`:''}</td></tr>`;
 function render() {
   const q = $('q').value.trim().toLowerCase(), city = $('city').value, pay = $('pay').value, nw = $('new').checked;
   const shown = leads.filter(j => (!q || `${j.title} ${j.company}`.toLowerCase().includes(q)) && (!city || j.city === city)
     && (!pay || (pay === 'y') === !!j.pay) && (!nw || j.found === today));
-  $('list').innerHTML = shown.map(card).join('') || '<p class="missing">No leads match.</p>';
-  $('sum').textContent = `${shown.length} of ${leads.length} leads (last ${MAX_AGE_DAYS} days) · ${leads.filter(j => j.found === today).length} new today`;
+  $('list').innerHTML = shown.map(row).join('') || '<tr><td colspan="5" class="empty">No leads match.</td></tr>';
+  $('sum').textContent = `${shown.length} of ${leads.length} leads · ${leads.filter(j => j.found === today).length} new today`;
 }
 fetch('leads.json',{cache:'no-cache'}).then(r=>r.json()).then(data=>{
   leads = data.map(j => ({...j, found: j.first_seen ? pt(new Date(j.first_seen)) : null})).filter(j => j.found && j.found >= cutoff);
   [...new Set(leads.map(j => j.city).filter(Boolean))].sort().forEach(c => $('city').add(new Option(c, c)));
   ['q','city','pay','new'].forEach(id => $(id).addEventListener('input', render));
+  $('list').addEventListener('click', ev => { const tr = ev.target.closest('tr[data-url]');
+    if (tr && !ev.target.closest('a')) window.open(tr.dataset.url, '_blank', 'noopener'); });
   render();
 }).catch(()=>$('sum').textContent='Could not load leads.');
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
