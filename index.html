@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Job Board</title><meta name="theme-color" content="#1f4e79">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="apple-touch-icon" href="icon-192.png">
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f3f5f8;color:#222}
+header{background:#1f4e79;color:#fff;padding:14px 16px;position:sticky;top:0}
+h1{margin:0;font-size:1.2rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.85}
+main{padding:10px;max-width:640px;margin:auto}
+.card{background:#fff;border-radius:10px;padding:12px 14px;margin-bottom:10px;box-shadow:0 1px 3px #0002}
+.card h2{font-size:1.05rem;margin:0 0 4px}.co{font-weight:600}.row{font-size:.9rem;margin:3px 0}
+.missing{color:#999;font-style:italic}.new{background:#d9480f;color:#fff;font-size:.7rem;padding:2px 6px;border-radius:8px;margin-left:6px;vertical-align:middle}
+a.apply{display:inline-block;margin-top:8px;background:#1f4e79;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none}
+</style></head><body>
+<header><h1>Mark's Job Board</h1><p id="sum">Loading…</p></header>
+<main id="list"></main>
+<script>
+const pt = d => new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles'}).format(d);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const val = v => v ? esc(v) : '<span class="missing">not listed</span>';
+fetch('leads.json',{cache:'no-cache'}).then(r=>r.json()).then(leads=>{
+  const today = pt(new Date());
+  let n = 0;
+  document.getElementById('list').innerHTML = leads.map(j=>{
+    const found = j.first_seen ? pt(new Date(j.first_seen)) : null, isNew = found===today;
+    if (isNew) n++;
+    return `<div class="card"><h2>${val(j.title)}${isNew?'<span class="new">NEW TODAY</span>':''}</h2>
+<div class="row co">${val(j.company)}</div>
+<div class="row">💵 ${val(j.pay)}</div><div class="row">📍 ${val(j.city)}</div>
+<div class="row">🗓 Found ${val(found)}${j.posted?` · posted ${esc(j.posted)}`:''}</div>
+${j.url?`<a class="apply" href="${esc(j.url)}" target="_blank" rel="noopener">Apply</a>`:'<div class="row missing">No apply link</div>'}</div>`;
+  }).join('');
+  document.getElementById('sum').textContent = `${leads.length} leads near Turlock, CA · ${n} new today`;
+}).catch(()=>document.getElementById('sum').textContent='Could not load leads.');
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script></body></html>
