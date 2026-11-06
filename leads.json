@@ -1,5 +1,45 @@
 [
 {
+"title": "Material Handler",
+"company": "Pacific Coast Supply, LLC",
+"pay": "$18–$23/hr (less than $25.25/hr)",
+"city": "Modesto, CA",
+"posted": "2026-11-06",
+"first_seen": "2026-11-06T08:07:16-08:00",
+"url": "https://www.linkedin.com/jobs/view/material-handler-at-pacific-coast-supply-llc-4486936813",
+"employment_type": "Full-time"
+},
+{
+"title": "Dryer and Packaging Operator",
+"company": "Hilmar Cheese Company",
+"pay": null,
+"city": "Hilmar, CA",
+"posted": "2026-11-05",
+"first_seen": "2026-11-06T08:07:16-08:00",
+"url": "https://jobs.hilmarcheese.com/job/Hilmar-Dryer-and-Packaging-Operator-CA-95324/1448324900/",
+"employment_type": "Full-time"
+},
+{
+"title": "Forklift Operator I",
+"company": "Sensient Technologies Corporation",
+"pay": "$23.77/hr (less than $25.25/hr)",
+"city": "Turlock, CA",
+"posted": "2026-11-05",
+"first_seen": "2026-11-06T08:07:16-08:00",
+"url": "https://www.linkedin.com/jobs/view/forklift-operator-i-at-sensient-technologies-corporation-4486921316",
+"employment_type": "Full-time"
+},
+{
+"title": "Inventory Clerk",
+"company": "Sensient Technologies Corporation",
+"pay": "$21.56/hr (less than $25.25/hr)",
+"city": "Turlock, CA",
+"posted": "2026-11-05",
+"first_seen": "2026-11-06T08:07:16-08:00",
+"url": "https://www.linkedin.com/jobs/view/inventory-clerk-at-sensient-technologies-corporation-4486905735",
+"employment_type": "Full-time"
+},
+{
 "title": "Production Associate - Entry Level",
 "company": "International Paper",
 "pay": "$20/hr then $27.53 after 90 days",
@@ -1008,75 +1048,5 @@
 "first_seen": "2026-10-07T07:37:05-07:00",
 "url": "https://www.simplyhired.com/job/bczOj9_vgdh_J8jJxv4KPV15DA-0jU8BphLsQlXJT-esnF0xm_Crzg",
 "employment_type": "Full-time"
-},
-{
-"title": "Raw Whey Operator",
-"company": "Hilmar Cheese Company",
-"pay": "$25.28-$29.40/hr",
-"city": "Hilmar, CA",
-"posted": "2026-10-02",
-"first_seen": "2026-10-06T19:27:15-07:00",
-"url": "https://jobs.hilmarcheese.com/job/Hilmar-Raw-Whey-Operator-CA-95324/1436329400/",
-"employment_type": "Full-time (per LinkedIn); 12-hr shifts incl. weekends/holidays/OT"
-},
-{
-"title": "Tower Operator - Plant 1",
-"company": "Hilmar Cheese Company",
-"pay": "$24.71-$28.20/hr",
-"city": "Hilmar, CA",
-"posted": "2026-10-02",
-"first_seen": "2026-10-06T19:27:15-07:00",
-"url": "https://jobs.hilmarcheese.com/job/Hilmar-Tower-Operator-Plant-1-CA-95324/1436426200/",
-"employment_type": "Full-time (per LinkedIn); 12-hr variable shifts incl. weekends/holidays/OT"
-},
-{
-"title": "WAREHOUSE LABOR (Swing)",
-"company": "United States Cold Storage",
-"pay": "$20.95–$22.45/hr",
-"city": "Turlock, CA",
-"posted": "2026-10-06",
-"first_seen": "2026-10-06T19:24:56-07:00",
-"url": "https://www.simplyhired.com/job/vzYYs7cINk52N-JyrbhopbVwelwreoLblsheDaAUF7h4YdBD7s17Pg",
-"employment_type": "Full-time, swing"
-},
-{
-"title": "Lift Truck Driver 2",
-"company": "Blue Diamond Growers",
-"pay": "$28.40/hr",
-"city": "Salida, CA",
-"posted": "2026-10-06",
-"first_seen": "2026-10-06T19:24:56-07:00",
-"url": "https://www.linkedin.com/jobs/view/lift-truck-driver-2-at-blue-diamond-growers-4474421011",
-"employment_type": "Full-time, swing"
-},
-{
-"title": "Lift Truck Driver 2 (SimplyHired repost)",
-"company": "Blue Diamond Growers",
-"pay": "$28.40/hr",
-"city": "Salida, CA",
-"posted": "2026-10-06",
-"first_seen": "2026-10-06T19:24:56-07:00",
-"url": "https://www.simplyhired.com/job/aHsWQvVFBA6-A6fOTijmBG6p5cjdoGzTC9kihU9Kv-J6OSekpRM9dg",
-"employment_type": "Repost of same role"
-},
-{
-"title": "Forklift Operator US - 1st shift",
-"company": "Refresco",
-"pay": "$18.98–$23.73/hr",
-"city": "Modesto, CA",
-"posted": "2026-10-06",
-"first_seen": "2026-10-06T19:24:56-07:00",
-"url": "https://www.linkedin.com/jobs/view/forklift-operator-us-1st-shift-at-refresco-4475124579",
-"employment_type": "Full-time"
-},
-{
-"title": "Forklift Operator US - 1st shift (SimplyHired repost)",
-"company": "Refresco Beverages US Inc",
-"pay": "$18.98–$23.73/hr",
-"city": "Modesto, CA",
-"posted": "2026-10-06",
-"first_seen": "2026-10-06T19:24:56-07:00",
-"url": "https://www.simplyhired.com/job/BENj72MpSggmgmyHVASnHRNNfzCm_ydAYw-vW4xQYIVhJ6vDYmxTlA",
-"employment_type": "Repost of same role"
 }
 ]
