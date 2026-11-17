@@ -1,47 +1,85 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Job Board</title><meta name="theme-color" content="#ffffff">
+<title>Job Board</title><meta name="theme-color" content="#efe6cf">
 <link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Courier+Prime:ital@0;1&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
 <style>
-body{font-family:"Roboto Condensed","Arial Narrow",system-ui,sans-serif;margin:0;background:#fff;color:#222;font-size:13px}
-header{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:10px 10px 6px;border-bottom:2px solid #222;position:sticky;top:0;background:#fff;z-index:1}
-h1{margin:0;font-size:18px;white-space:nowrap}header p{margin:0;color:#666;font-size:12px;text-align:right}
-.f{display:flex;flex-wrap:wrap;gap:5px;padding:6px 10px;background:#f6f6f6;border-bottom:1px solid #ddd}
-.f input,.f select{font-size:16px;padding:5px;border:1px solid #bbb;border-radius:3px;flex:1 1 120px;min-width:0}.f input[type=search]{flex-basis:100%}
-.f label{font-size:13px;display:flex;align-items:center;gap:4px}.f input[type=checkbox]{flex:none}
-table{width:100%;border-collapse:collapse}th{text-align:left;font-size:11px;text-transform:uppercase;color:#777;padding:6px;border-bottom:1px solid #ccc;background:#fafafa}
-td{padding:7px 6px;border-bottom:1px solid #eee;vertical-align:top}tr:nth-child(even) td{background:#fbfbfb}tbody tr{cursor:pointer}tbody tr:active td{background:#eef3ff}
-td b{display:block;font-size:13px}td small{color:#777}.m{color:#bbb}.new{background:#d00;color:#fff;font-size:9px;font-weight:700;padding:1px 4px;border-radius:2px;margin-left:4px}
-a{color:#0645ad;font-weight:700}.empty{padding:16px;color:#999}
+*{box-sizing:border-box}html,body{margin:0;padding:0;overflow-x:hidden}
+body{background:#efe6cf;color:#1a150e;font-family:"Source Serif 4","Source Serif Pro",Georgia,serif;-webkit-font-smoothing:antialiased}
+body{background-image:radial-gradient(circle at 15% 0%,rgba(90,60,20,.05),transparent 40%),repeating-linear-gradient(0deg,rgba(80,50,10,.03) 0 1px,transparent 1px 4px)}
+header{padding:14px 16px 10px;text-align:center;border-bottom:3px double #1a150e}
+.kicker{font-family:Cinzel,"Times New Roman",serif;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#5c4a32;margin:0 0 4px}
+h1{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:34px;line-height:.9;letter-spacing:-.02em;margin:0;font-variation-settings:"SOFT" 0,"WONK" 1,"opsz" 40}
+.dateline{display:flex;justify-content:space-between;align-items:center;gap:6px 10px;flex-wrap:wrap;margin-top:8px;padding-top:6px;border-top:1px solid #1a150e;font-family:"Courier Prime",ui-monospace,monospace;font-size:10px;letter-spacing:.02em;text-transform:uppercase;color:#3d3324}
+.section{text-align:center;padding:8px 16px 2px}
+.section h2{font-family:Cinzel,serif;font-size:13px;letter-spacing:.32em;margin:0;font-weight:700}
+.section p{margin:2px 0 0;font-style:italic;font-size:12px;color:#5c4a32}
+.f{margin:8px 14px 6px;padding:8px;border:1px solid #1a150e;background:#f6eedc;display:flex;flex-wrap:wrap;gap:6px;position:sticky;top:0;z-index:1}
+.f input,.f select{font-family:"Source Serif 4",Georgia,serif;font-size:16px;color:#1a150e;border-radius:0;min-width:0}
+.f input[type=search]{flex:1 1 100%;padding:6px 8px;border:0;border-bottom:1px solid #1a150e;background:transparent}
+.f input[type=search]::placeholder{color:#7a6a52;font-style:italic}
+.f select{flex:1 1 120px;padding:6px 4px;border:1px solid #1a150e;background:#f6eedc}
+.f label{display:flex;align-items:center;gap:5px;font-family:"Courier Prime",ui-monospace,monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;width:100%}
+.f input[type=checkbox]{flex:none}
+.rule{height:3px;border-top:1px solid #1a150e;border-bottom:1px solid #1a150e;margin:4px 14px 0}
+.ads{padding:0 14px 20px}
+article{padding:9px 0 8px;border-bottom:1px solid #1a150e;overflow-wrap:break-word}
+article[data-url]{cursor:pointer}article[data-url]:active{background:rgba(80,50,10,.05)}
+.ttl{font-family:Fraunces,Georgia,serif;font-size:16px;font-weight:650;line-height:1.15;margin:0 0 1px;letter-spacing:-.01em}
+.co{font-style:italic;font-size:13px;margin:0 0 3px;color:#3d3324}
+.meta{font-family:"Courier Prime",ui-monospace,monospace;font-size:11px;line-height:1.35;color:#3d3324;margin:0}
+.missing{font-style:italic}
+.new{display:inline-block;font-family:Cinzel,serif;font-size:8px;font-weight:700;letter-spacing:.14em;border:1px solid #9a1c16;color:#9a1c16;padding:1px 4px 0;margin-left:6px;vertical-align:2px;line-height:1.4}
+a.apply{display:inline-block;margin-top:3px;font-family:Cinzel,serif;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1a150e;text-decoration:none;border-bottom:1px solid #1a150e}
+.empty{padding:16px 0;color:#5c4a32;font-style:italic}
 </style></head><body>
-<header><h1>JOB BOARD</h1><p id="sum">Loading…</p></header>
-<div class="f"><input type="search" id="q" placeholder="Search title or company">
-<select id="city"><option value="">All cities</option></select>
-<select id="pay"><option value="">Pay: any</option><option value="y">Pay listed</option><option value="n">Pay not listed</option></select>
-<label><input type="checkbox" id="new"> New today</label></div>
-<table><thead><tr><th>Job</th><th>Pay</th><th>City</th><th>Found</th><th></th></tr></thead><tbody id="list"></tbody></table>
-<script>const MAX_AGE_DAYS = 30, $ = id => document.getElementById(id);
+<header>
+  <p class="kicker">Turlock, California · Est. 2026</p>
+  <h1>The Job Board</h1>
+  <div class="dateline"><span id="when"></span><span id="sum">Loading…</span><span id="newn"></span></div>
+</header>
+<div class="section"><h2>Help Wanted</h2><p>Classifieds · Positions near Turlock</p></div>
+<div class="f">
+  <input type="search" id="q" placeholder="Search title or company" enterkeyhint="search">
+  <select id="city"><option value="">All cities</option></select>
+  <select id="pay"><option value="">Pay: any</option><option value="y">Pay listed</option><option value="n">Pay not listed</option></select>
+  <label><input type="checkbox" id="new"> New today</label>
+</div>
+<div class="rule"></div>
+<div class="ads" id="list"></div>
+<script>
+const MAX_AGE_DAYS = 30, $ = id => document.getElementById(id);
 const pt = d => new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles'}).format(d);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const foundTxt = iso => { const [y,m,d] = iso.split('-'); return `${mo[+m-1]} ${+d}`; };
 const today = pt(new Date()), cutoff = pt(new Date(Date.now() - MAX_AGE_DAYS*864e5));
+$('when').textContent = new Intl.DateTimeFormat('en-US',{weekday:'long',month:'short',day:'numeric',year:'numeric',timeZone:'America/Los_Angeles'})
+  .format(new Date()).replace(/(\w{3}) /, '$1. ');
 let leads = [];
-const row = j => `<tr${j.url?` data-url="${esc(j.url)}"`:''}><td><b>${esc(j.title||'—')}${j.found===today?'<span class="new">NEW</span>':''}</b><small>${esc(j.company||'')}</small></td>
-<td>${j.pay?esc(j.pay):'<span class="m">—</span>'}</td><td>${esc((j.city||'—').replace(/, CA$/,''))}</td><td>${j.found.slice(5)}</td>
-<td>${j.url?`<a href="${esc(j.url)}" target="_blank" rel="noopener">Apply</a>`:''}</td></tr>`;
+const row = j => `<article${j.url?` data-url="${esc(j.url)}"`:''}>
+  <p class="ttl">${esc(j.title||'—')}${j.found===today?'<span class="new">NEW</span>':''}</p>
+  <p class="co">${esc(j.company||'')}</p>
+  <p class="meta">${j.pay?esc(j.pay):'<span class="missing">Pay not listed</span>'} · ${esc(j.city||'—')} · Found ${foundTxt(j.found)}</p>
+  ${j.url?`<a class="apply" href="${esc(j.url)}" target="_blank" rel="noopener">Apply</a>`:''}
+</article>`;
 function render() {
   const q = $('q').value.trim().toLowerCase(), city = $('city').value, pay = $('pay').value, nw = $('new').checked;
   const shown = leads.filter(j => (!q || `${j.title} ${j.company}`.toLowerCase().includes(q)) && (!city || j.city === city)
     && (!pay || (pay === 'y') === !!j.pay) && (!nw || j.found === today));
-  $('list').innerHTML = shown.map(row).join('') || '<tr><td colspan="5" class="empty">No leads match.</td></tr>';
-  $('sum').textContent = `${shown.length} of ${leads.length} leads · ${leads.filter(j => j.found === today).length} new today`;
+  $('list').innerHTML = shown.map(row).join('') || '<p class="empty">No leads match.</p>';
+  const n = leads.filter(j => j.found === today).length;
+  $('sum').textContent = shown.length === leads.length ? `${leads.length} listings` : `${shown.length} of ${leads.length} listings`;
+  $('newn').textContent = `${n} new today`;
 }
 fetch('leads.json',{cache:'no-cache'}).then(r=>r.json()).then(data=>{
   leads = data.map(j => ({...j, found: j.first_seen ? pt(new Date(j.first_seen)) : null})).filter(j => j.found && j.found >= cutoff);
   [...new Set(leads.map(j => j.city).filter(Boolean))].sort().forEach(c => $('city').add(new Option(c, c)));
   ['q','city','pay','new'].forEach(id => $(id).addEventListener('input', render));
-  $('list').addEventListener('click', ev => { const tr = ev.target.closest('tr[data-url]');
-    if (tr && !ev.target.closest('a')) window.open(tr.dataset.url, '_blank', 'noopener'); });
+  $('list').addEventListener('click', ev => { const el = ev.target.closest('article[data-url]');
+    if (el && !ev.target.closest('a')) window.open(el.dataset.url, '_blank', 'noopener'); });
   render();
 }).catch(()=>$('sum').textContent='Could not load leads.');
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');

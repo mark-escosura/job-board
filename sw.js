@@ -1,5 +1,5 @@
 // Network-first so leads stay fresh; cached copy only used when offline. No user data is stored.
-const C = 'job-board-v4';
+const C = 'job-board-v5';
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(C).then(c => c.addAll(['./', 'index.html', 'leads.json', 'manifest.json', 'icon-192.png', 'apple-touch-icon.png']))); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== C).map(k => caches.delete(k))))));
 self.addEventListener('fetch', e => {
